@@ -1,0 +1,13 @@
+.ipynb_checkpoints/
+__pycache__/
+*.hdf5
+*.mp4
+*.pdf
+*.out
+*.lst
+*.dat
+*.npy
+*.h5
+*.db
+*.gz
+*.sh
