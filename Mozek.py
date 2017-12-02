@@ -14,7 +14,7 @@ from castor import director
 
 
 try:
-    MODEL = load_model("lamost.h5")
+    MODEL = load_model("pollux.h5")
 except (ImportError, ValueError) as _e_:
     sys.exit(_e_)
 else:
@@ -22,13 +22,13 @@ else:
 
 
 with device('/gpu:0'):
-    HISTORY = MODEL.fit_generator(director("lamost"), 256, 1000,
-                                  validation_data=director("lamost"),
+    HISTORY = MODEL.fit_generator(director("train"), 256, 1000,
+                                  validation_data=director("test"),
                                   validation_steps=96,
-                                  verbose=0)
+                                  verbose=1)
 
-MODEL.save("lamost.hdf5")
-np.savetxt("lamost.out", np.asarray([HISTORY.history["loss"],
+MODEL.save("pollux.hdf5")
+np.savetxt("pollux.out", np.asarray([HISTORY.history["loss"],
                                      HISTORY.history["acc"],
                                      HISTORY.history["val_loss"],
                                      HISTORY.history["val_acc"]]).T)
