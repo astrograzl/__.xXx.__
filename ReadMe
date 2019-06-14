@@ -1,0 +1,98 @@
+B/pollux   POLLUX database of synthetic stellar spectra  (Palacios+ 2010-2015)
+================================================================================
+The POLLUX database of synthetic stellar spectra.
+     Palacios A., Gebran M., Josselin E., Martins F., Plez B., Belmas M.,
+     Lebre A.
+    <Astron. Astrophys. 516, A13 (2010)>
+    =2010A&A...516A..13P
+================================================================================
+ADC_Keywords: Spectroscopy ; Models
+Keywords: astronomical data bases: miscellaneous - stars: general -
+          techniques: spectroscopic
+
+Abstract:
+    Synthetic spectra are needed to determine fundamental stellar and wind
+    parameters of all types of stars. They are also used for the
+    construction of theoretical spectral libraries helpful for stellar
+    population synthesis. Therefore, a database of theoretical spectra is
+    required to allow rapid and quantitative comparisons to spectroscopic
+    data. We provide such a database offering an unprecedented coverage of
+    the entire Hertzsprung-Russell diagram.
+    We present the POLLUX database of synthetic stellar spectra. For
+    objects with Teff<=6000K, MARCS atmosphere models are computed and the
+    program TURBOSPECTRUM provides the synthetic spectra. ATLAS12 models
+    are computed for stars with 7000K<=Teff<=15000K. SYNSPEC gives the
+    corresponding spectra. Finally, the code CMFGEN provides atmosphere
+    models for the hottest stars (Teff>25000K). Their spectra are computed
+    with CMF_FLUX_. Both high resolution (R>150000) optical spectra in the
+    range 3000 to 12000{AA} and spectral energy distributions extending
+    from the UV to near-IR ranges are presented. These spectra cover the
+    HR diagram at solar metallicity. We propose a wide variety of
+    synthetic spectra for various types of stars in a format that is
+    compliant with th Virtual Observatory standards. A user-friendly web
+    interface allows an easy selection of spectra and data retrieval.
+    Upcoming developments will include an extension to a large range of
+    metallicities and to the near-IR high resolution spectra, as well as
+    a better coverage of the HR diagram, with the inclusion of models for
+    Wolf-Rayet stars and large datasets for cool stars. The POLLUX
+    database is accessible at http://pollux.graal.univ-montp2.fr/ and
+    through the Virtual Observatory.
+
+Description:
+    A description of the data (high resolution synthetic spectra and
+    spectral energy distributions) in the POLLUX database is presented in
+    the form of an ascii table providing parameters that can be queried
+    (Teff, logg, code, metallicity) and giving the filename and URL where
+    a fits file can be retrieved.
+
+File Summary:
+--------------------------------------------------------------------------------
+ FileName   Lrecl  Records   Explanations
+--------------------------------------------------------------------------------
+ReadMe         80        .   This file
+pollux.dat    164     8134  *Description of the data in the POLLUX database
+                             (Version 2015-03-01)
+--------------------------------------------------------------------------------
+Note on pollux.dat: Model atmosphere and codes for spectral synthesis used
+     are CMFGEN/CMF_FLUX for O-type stars, ATLAS12/SYNSPEC for A and F-type
+     stars, MARCS/TURBOSPECTRUM for G to M type stars.
+--------------------------------------------------------------------------------
+
+See also:
+  http://pollux.graal.univ-montp2.fr/ : POLLUX Database Home Page
+
+Byte-by-byte Description of file: pollux.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label      Explanations
+--------------------------------------------------------------------------------
+   2-  6  I5    ---     Seq        [16900/25033] Internal Identification number
+   8-111  A104  ---     Shortname  Name of the data file in the database (1)
+ 113-116  A4    ---     Type       Type of Data, "sed" or "spec" (1)
+ 118-126  A9    ---     Model      Code used to compute model atmosphere
+ 128-132  I5    K       Teff       [3000/66450] Effective Temperature
+ 134-138  F5.2 [cm/s2]  logg       [-1/5]? Logarithm of the surface gravity
+ 140-144  F5.1  km/s    Vturb      [1/30] Microturbulent velocity
+ 146-150  F5.2 [Sun]    [Fe/H]     [-5/1] Metallicity
+ 152-157  I6    0.1nm   lam.min    [3000] Lower bound of the wavelength domain
+ 159-164  I6    0.1nm   lam.max    [12000/12500] Upper bound of the wavelength
+                                                 domain
+--------------------------------------------------------------------------------
+Note (1): The FITS file for this data can be retrieved at the url:
+      http://pollux.graal.univ-montp2.fr/ssaserver/tsap?Id=<Shortname>.FITS
+    * Files with extension ".spec" refer to high resolution synthetic
+      spectra (R>150000).
+    * Files with extension ".sed" refer to spectral energy distributions.
+      (no such files any more in 15-Mar-2015 version)
+    In both cases, the wavelength coverage is indicated by lamMin and lamMax.
+--------------------------------------------------------------------------------
+
+History:
+  * 16-Apr-2010: Original version (1040 spectra)
+  * 06-Jun-2011: Version 2451 spectra.
+  * 15-Mar-2015: version 8134 spectra.
+
+Acknowledgements:
+     Ana Palacios, univ-montp2.fr
+     Michele Sanguillon, univ-montp2.fr
+================================================================================
+(End)     Ana Palacios [CNRS/UM2, France], Patricia Vannier [CDS]    16-Apr-2010
