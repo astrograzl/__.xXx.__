@@ -1,0 +1,9 @@
+.ipynb_checkpoints/
+catalog/
+sample/
+*.lst
+*.npy
+*.hdf5
+*.h5
+*.db?
+*.out
